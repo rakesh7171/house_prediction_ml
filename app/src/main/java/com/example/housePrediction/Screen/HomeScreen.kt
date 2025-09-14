@@ -112,7 +112,6 @@ fun loadModelFile(context: Context, filename: String): MappedByteBuffer {
 fun runTFLiteModel(context: Context, input: FloatArray): Float {
     val tfliteModel = loadModelFile(context, "house_price_model.tflite")
     val interpreter = Interpreter(tfliteModel)
-
     //
     // Input shape [1,3], output shape [1,1]
     val inputArray = arrayOf(floatArrayOf(input[0], input[1], input[2]))
